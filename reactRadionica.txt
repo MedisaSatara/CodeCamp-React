@@ -1,0 +1,24 @@
+react radionica
+use effect()
+-kada se u inputu nesto promjeni use effect sluzi da slusa te promjene.
+-pristupanje apiju
+-azuriranje dom-a
+-sirina pixela na ekranu
+-ciscenje resusra
+
+-izvrsava se nakon sto se komponenta renderira
+-kada se varijabla promjeni, on se iznova i iznova izvodi. ako u inputu ima neko ime, on se pokrene prvi put kada dodje 
+na taj page, ali ako mu se da neka ovisnost, tj ako mu se da neko stanje, on se iznova i iznova poziva
+
+-u uglastim zagrada se daju te ovisnosti npr useeffect(callback())
+-kada se u use state nesto promjeni, onda se useeffect opet poziva
+
+
+useRef()
+-omogucava stvaranje referenci na nekim elementima
+-moze mu se proslijediti pocetna vrijednost
+const myRef=useRef(initialValue);
+
+-npr kada se prati id neke vrijednosti, kada treba promijeniti nesto u nekom id, doda se id u ref i tako se prati
+promjena za taj useRef
+

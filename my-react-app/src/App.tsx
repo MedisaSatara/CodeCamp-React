@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Zadaca1AgeChecker } from "./Zadaca1AgeChecker";
 import { Zadaca1TempChecker } from "./Zadaca1TempChecker";
 import { Zadaca1LoginInfo } from "./Zadaca1LoginInfo";
@@ -10,6 +10,7 @@ import { InputForm } from "./InputForm";
 import { CounterCheck } from "./CounterChecker";
 import { Zadaca2Checkbox } from "./Zadaca2Checkbox";
 import { Zadaca2ButtonsForCount } from "./Zadaca2ButtonsForCount";
+import { PrimjerUseeffect } from "./PrimjerUseeffect";
 
 /*const App: React.FC = () => {
   const ime: string = "svijete";
@@ -40,6 +41,7 @@ export const App: React.FC = () => {
       <InputForm />
       <Zadaca2Checkbox />
       <Zadaca2ButtonsForCount />
+      <PrimjerUseeffect />
     </div>
   );
 };
