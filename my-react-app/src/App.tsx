@@ -11,6 +11,7 @@ import { CounterCheck } from "./CounterChecker";
 import { Zadaca2Checkbox } from "./Zadaca2Checkbox";
 import { Zadaca2ButtonsForCount } from "./Zadaca2ButtonsForCount";
 import { PrimjerUseeffect } from "./PrimjerUseeffect";
+import { Zadaca3Tasks } from "./Zadaca3Tasks";
 
 /*const App: React.FC = () => {
   const ime: string = "svijete";
@@ -42,6 +43,8 @@ export const App: React.FC = () => {
       <Zadaca2Checkbox />
       <Zadaca2ButtonsForCount />
       <PrimjerUseeffect />
+      <br />
+      <Zadaca3Tasks />
     </div>
   );
 };
