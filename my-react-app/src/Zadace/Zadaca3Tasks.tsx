@@ -11,6 +11,9 @@ promjena tog stanja.*/
 /*. Kreirajte tajmer koji se ažurira, ali ne izaziva ponovno
 renderiranje.*/
 
+//POPRAVITI TIMER, TJ DA BUDE DA CIJELO VRIJEME ODBROJAVA NA EKRANU SEKUNDE, A DA KADA SE REFRESA STRANICA DA
+//NASTAVI GDJE JE STAO
+
 /*Kreirati komponentu koja će sadržati input polje, a kada
 korisnik klikne na dugme, fokus će se automatski postaviti
 na to input polje.*/

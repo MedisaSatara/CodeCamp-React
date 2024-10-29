@@ -10,10 +10,37 @@ export const PrimjerUseeffect: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const countRef = useRef(0);
 
+  const [stateBrojac, postaviBrojac] = useState(0);
+  const refBrojac = useRef(0);
+
+  function uvecajRef() {
+    refBrojac.current += 1;
+    console.log("uvecali smo brojac!");
+  }
+
+  function uvecajState() {
+    postaviBrojac((b) => b + 1);
+  }
+
   const handleClick = () => {
     countRef.current += 1;
     console.log(`Kliknuo je ${countRef.current} puta`);
   };
+
+  const prva = useRef<HTMLImageElement | null>(null);
+  const zadnja = useRef<HTMLImageElement | null>(null);
+
+  function naZadnju() {
+    if (zadnja.current) {
+      zadnja.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  function naPrvu() {
+    if (prva.current) {
+      prva.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   useEffect(() => {
     console.log(`Trenutni broj: ${count}`);
@@ -84,6 +111,43 @@ export const PrimjerUseeffect: React.FC = () => {
 
       <button onClick={handleClick}>Klikni</button>
       <p>{countRef.current}</p>
+
+      <br />
+      <br />
+      <div className="task1">
+        <p>Ref brojac: {refBrojac.current}</p>
+        <button onClick={uvecajRef}>+</button>
+        <p>State brojac:{stateBrojac}</p>
+        <button onClick={uvecajState}>+</button>
+      </div>
+
+      <br />
+      <br />
+      <div className="task2">
+        <div className="kontrola">
+          <button onClick={naZadnju}>Zadnja</button>
+          <button onClick={naPrvu}>Prva</button>
+        </div>
+        <div className="okvir">
+          <img
+            src="https://http.cat/204"
+            alt="No Content"
+            ref={prva}
+            width={200}
+          />
+          <br />
+          <img src="https://http.cat/401" alt="Unauthorized" width={200} />
+          <br />
+          <img src="https://http.cat/404" alt="Not Found" width={200} />
+          <br />
+          <img
+            src="https://http.cat/409"
+            alt="Conflict"
+            ref={zadnja}
+            width={200}
+          />
+        </div>
+      </div>
     </div>
   );
 };

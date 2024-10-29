@@ -22,3 +22,11 @@ const myRef=useRef(initialValue);
 -npr kada se prati id neke vrijednosti, kada treba promijeniti nesto u nekom id, doda se id u ref i tako se prati
 promjena za taj useRef
 
+USEcONTEXT()
+
+omogucava pristum kontekstu unutra funkcionalnih komponenti
+npr ako se poziva url, moze se to uraditi na pocetku, u useContext staviti url.
+stvara se pomocu createContext()
+npr export const TemaContext=createContext("light") 
+npr stavi se na pocetku i citava stranica ce biti light
+
