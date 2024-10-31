@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import { PozivKomponenti } from "./ZadaciZaVjezbu/PozivKomponenti";
 import { Login } from "./Components/Login";
 import { Registration } from "./Components/Registration";
+import { Route, Routes } from "react-router-dom";
+import { HomePage } from "./Components/HomePage";
+import { WelcomePage } from "./Components/WelcomePage";
 
 /*const App: React.FC = () => {
   const ime: string = "svijete";
@@ -21,8 +24,12 @@ export const App: React.FC = () => {
   return (
     <div>
       {/*<PozivKomponenti />*/}
-      <Login />
-      <Registration />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/welcome" element={<WelcomePage />} />
+      </Routes>
     </div>
   );
 };
