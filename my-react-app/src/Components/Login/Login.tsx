@@ -1,3 +1,4 @@
+import { profile } from "console";
 import React, { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -7,10 +8,15 @@ export const Login: FC = () => {
 
   const navigate = useNavigate();
   function SignIn() {
-    const savedProfile = localStorage.getItem("userProfile");
+    const savedProfile = localStorage.getItem("userProfiles");
     if (savedProfile) {
       const userProfile = JSON.parse(savedProfile);
-      if (email == userProfile.email && password == userProfile.password) {
+      const user = userProfile.find(
+        (profile: { email: String; password: String }) =>
+          profile.email === email && profile.password === password
+      );
+      if (user) {
+        localStorage.setItem("currentUser", JSON.stringify(user));
         console.log("email i password postoje, uspjesno ste se logirali");
         navigate("/welcome");
       } else {

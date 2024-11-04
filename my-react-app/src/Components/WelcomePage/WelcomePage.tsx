@@ -3,12 +3,12 @@ import React, { FC, useEffect, useState } from "react";
 export const WelcomePage: FC = () => {
   const [email, setEmail] = useState("");
   useEffect(() => {
-    const savedData = localStorage.getItem("userProfile");
-    if (savedData) {
-      const userData = JSON.parse(savedData);
+    const currentUser = localStorage.getItem("currentUser");
+    if (currentUser) {
+      const userData = JSON.parse(currentUser);
       setEmail(userData.email);
     }
-  }, [email]);
+  }, []);
   return (
     <div className="welcomePage">
       <p>Welcome page!</p>

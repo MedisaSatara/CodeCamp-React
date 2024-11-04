@@ -18,7 +18,11 @@ export const Registration: FC = () => {
   function savePodaci() {
     const profilData = { email, password, gender, country };
     setUserProfile(profilData);
-    localStorage.setItem("userProfile", JSON.stringify(profilData));
+    const savedProfile = JSON.parse(
+      localStorage.getItem("userProfiles") || "[]"
+    );
+    const updatedDataProfile = [...savedProfile, profilData];
+    localStorage.setItem("userProfiles", JSON.stringify(updatedDataProfile));
 
     console.log("Podaci su spaseni");
     navigate("/login");
