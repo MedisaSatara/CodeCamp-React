@@ -1,7 +1,7 @@
 import { profile } from "console";
 import React, { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./Login.scss";
 export const Login: FC = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -27,9 +27,9 @@ export const Login: FC = () => {
   useEffect(() => {}, [email]);
 
   return (
-    <div className="login">
+    <div className="login-page">
       <p>Login</p>
-      <form onSubmit={SignIn}>
+      <form onSubmit={SignIn} className="loginForm">
         <label>Email</label>
         <br />
         <input
@@ -45,6 +45,7 @@ export const Login: FC = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <br />
         <br />
         <button type="submit">Sign in</button>
       </form>

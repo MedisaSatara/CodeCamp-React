@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import "./Registration.scss";
 type UserProfile = {
   email?: string;
   password?: string;
@@ -30,10 +31,10 @@ export const Registration: FC = () => {
   useEffect(() => {}, [userProfile]);
 
   return (
-    <div className="registration">
-      <p>Registration</p>
-      <form onSubmit={savePodaci}>
-        <label>Name and last name</label>
+    <div className="registration-page">
+      <h1>Registration</h1>
+      <form onSubmit={savePodaci} className="registrationForm">
+        <label>Name and LastName</label>
         <br />
         <input
           type="text"
@@ -59,35 +60,41 @@ export const Registration: FC = () => {
         <br />
         <br />
         <label>
-          <input
-            type="radio"
-            value="female"
-            checked={gender === "female"}
-            onChange={(e) => setGender(e.target.value)}
-          />
-          Female
+          Gender
+          <br />
+          <label>
+            <input
+              type="radio"
+              value="female"
+              checked={gender === "female"}
+              onChange={(e) => setGender(e.target.value)}
+            />
+            Female
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="male"
+              checked={gender === "male"}
+              onChange={(e) => setGender(e.target.value)}
+            />
+            Male
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="other"
+              checked={gender === "other"}
+              onChange={(e) => setGender(e.target.value)}
+            />
+            Other
+          </label>
         </label>
-        <label>
-          <input
-            type="radio"
-            value="male"
-            checked={gender === "male"}
-            onChange={(e) => setGender(e.target.value)}
-          />
-          Male
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="other"
-            checked={gender === "other"}
-            onChange={(e) => setGender(e.target.value)}
-          />
-          Other
-        </label>
+
         <br />
         <label>
           Country:
+          <br />
           <select
             value={country}
             onChange={(e) => setCountry(e.target.value)}

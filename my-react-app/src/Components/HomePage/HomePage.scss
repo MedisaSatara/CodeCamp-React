@@ -1,0 +1,26 @@
+@import "../../scss/color/color-palete.scss";
+
+.home-page{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    justify-self: center;
+    .welcomeDiv{
+        width: 200px;
+        height: 200px;
+        h1{
+            height: 50px;
+        }
+        button{
+            background-color: blue;
+            color: white;
+            width: 100px;
+            height: 30px;
+            border: none;
+            box-shadow: 2px 2px grey;
+        }
+    }
+}
+
