@@ -1,7 +1,10 @@
 import React, { FC, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./WelcomePage.scss";
 
 export const WelcomePage: FC = () => {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
   useEffect(() => {
     const currentUser = localStorage.getItem("currentUser");
     if (currentUser) {
@@ -9,10 +12,20 @@ export const WelcomePage: FC = () => {
       setEmail(userData.email);
     }
   }, []);
+  function Odjava() {
+    localStorage.removeItem("currentUser");
+    navigate("/login");
+  }
+  function handleTodoList() {
+    navigate("/todolist");
+  }
   return (
-    <div className="welcomePage">
-      <p>Welcome page!</p>
+    <div className="welcome-page">
+      <nav>
+        <button onClick={Odjava}>Odjava</button>
+      </nav>
       <h1>Dobrodosli, {email} </h1>
+      <button onClick={handleTodoList}>Todo list</button>
     </div>
   );
 };

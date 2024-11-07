@@ -6,6 +6,8 @@ import { Registration } from "./Components/Registration";
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./Components/HomePage";
 import { WelcomePage } from "./Components/WelcomePage";
+import { TodoList } from "./TodoApp/TodoList";
+import { TodoItem } from "./TodoApp/TodoItem";
 
 /*const App: React.FC = () => {
   const ime: string = "svijete";
@@ -29,6 +31,7 @@ export const App: React.FC = () => {
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
         <Route path="/welcome" element={<WelcomePage />} />
+        <Route path="/todolist" element={<TodoList />} />
       </Routes>
     </div>
   );

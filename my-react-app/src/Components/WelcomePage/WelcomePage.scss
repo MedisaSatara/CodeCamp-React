@@ -1,0 +1,38 @@
+.welcome-page{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    nav{
+        display: flex;
+        justify-content: right;
+        flex-direction: row;
+        button{
+            background-color: grey;
+            height: 30px;
+            border: none;
+            box-shadow: 2px 2px grey;
+            color: white;
+        }
+    }
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        flex-direction: column;
+        justify-self: center;
+        h1{
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+                flex-direction: column;
+                justify-self: center;
+        }
+        button {
+            width: 100px;
+            background-color: blue;
+            height: 30px;
+            border: none;
+            color: white;
+        
+        
+    }
+}
