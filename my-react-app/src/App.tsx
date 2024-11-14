@@ -7,7 +7,6 @@ import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./Components/HomePage";
 import { WelcomePage } from "./Components/WelcomePage";
 import { TodoList } from "./TodoApp/TodoList";
-import { TodoItem } from "./TodoApp/TodoItem";
 
 /*const App: React.FC = () => {
   const ime: string = "svijete";
