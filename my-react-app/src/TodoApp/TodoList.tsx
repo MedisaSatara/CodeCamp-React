@@ -15,6 +15,9 @@ export const TodoList: FC = () => {
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
+  /*fetch(url)
+    .then((response) => response.json())
+    .then((data) => console.log(data));*/
 
   const removeTask = (index: number) => {
     setTodoList(todoList.filter((_, i) => i !== index));
