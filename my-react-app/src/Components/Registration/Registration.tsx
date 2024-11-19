@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./Registration.scss";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
 type UserProfile = {
   email?: string;
   password?: string;
@@ -14,6 +16,8 @@ export const Registration: FC = () => {
   const [gender, setGender] = useState("");
   const [country, setCountry] = useState("");
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+
+  const [displayName, setDisplayName] = useState("");
 
   const navigate = useNavigate();
   function savePodaci() {
@@ -30,10 +34,23 @@ export const Registration: FC = () => {
   }
   useEffect(() => {}, [userProfile]);
 
-  return (
-    <div className="registration-page">
-      <h1>Registration</h1>
-      <form onSubmit={savePodaci} className="registrationForm">
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      //await updateProfile(userCredential.user,{displayName});
+
+      navigate("/login");
+      console.log("User registrated  successufully");
+    } catch (error) {
+      console.log("Error registration user", error);
+    }
+  };
+  /*<form onSubmit={savePodaci} className="registrationForm">
         <label>Name and LastName</label>
         <br />
         <input
@@ -105,6 +122,31 @@ export const Registration: FC = () => {
             <option value="BiH">Bosnia and Herzegovina</option>
           </select>
         </label>
+        <br />
+        <br />
+        <button type="submit">Save</button>
+      </form>*/
+
+  return (
+    <div className="registration-page">
+      <h1>Registration</h1>
+      <form onSubmit={handleRegister} className="registrationForm">
+        <br />
+        <label>Email</label>
+        <br />
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <br />
+        <label>Password</label>
+        <br />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <br />
         <br />
         <button type="submit">Save</button>

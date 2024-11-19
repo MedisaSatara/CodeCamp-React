@@ -2,6 +2,9 @@ import { profile } from "console";
 import React, { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+
 export const Login: FC = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -26,10 +29,21 @@ export const Login: FC = () => {
   }
   useEffect(() => {}, [email]);
 
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log("user logged successufully");
+      navigate("/welcome");
+    } catch (error) {
+      console.error("Error logged in", error);
+    }
+  };
+
   return (
     <div className="login-page">
       <p>Login</p>
-      <form onSubmit={SignIn} className="loginForm">
+      <form onSubmit={handleLogin} className="loginForm">
         <label>Email</label>
         <br />
         <input
