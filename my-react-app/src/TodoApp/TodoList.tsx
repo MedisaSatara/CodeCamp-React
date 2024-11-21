@@ -4,6 +4,7 @@ import { TodoItem } from "./TodoItem";
 import { useAuth } from "../hooks/useAuth";
 import { Task } from "../types/Task";
 import { addTask } from "../services/taskService";
+import { error } from "console";
 
 export const TodoList: FC = () => {
   const [todo, setTodo] = useState("");
@@ -50,17 +51,22 @@ export const TodoList: FC = () => {
       await addTask(newTask);
       setNewTaskTitle("");
     }
+    //@typescript-eslint/no-unused-expressions
+    else {
+      //@typescript-eslint/no-unused-expressions
+      console.error("error");
+    }
   };
 
   return (
     <div className="todolist-page">
       <p>Todo list!</p>
-      <form onClick={saveTodoList}>
+      <form onClick={handleAddTask}>
         <input
           ref={inputRef}
           type="text"
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
+          value={newTaskTitle}
+          onChange={(e) => setNewTaskTitle(e.target.value)}
         ></input>
         <button>Save</button>
       </form>
