@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import "./HomePage.scss";
 import { useNavigate } from "react-router-dom";
 import { title } from "process";
+import HomePageImg from "../../slike/homepage.jpg";
 
 export const HomePage: FC = () => {
   const navigate = useNavigate();
@@ -34,18 +35,28 @@ export const HomePage: FC = () => {
 
   return (
     <div className="home-page">
-      <div className="welcomeDiv">
-        <h1>Dobrodosli!</h1>
-        <button onClick={handleButton}>Registracija</button>
-        <input
-          type="number"
-          value={id}
-          onChange={idData}
-          min={1}
-          max={100}
-          placeholder="Unesi id"
-        />
-        <button onClick={getData}>Podaci</button>
+      <nav className="nav-bar">
+        <button onClick={handleButton}>Register</button>
+      </nav>
+      <div
+        className="welcomeDiv"
+        style={{ backgroundImage: `url(${HomePageImg})` }}
+      >
+        <h1>Welcome to My React App!</h1>
+      </div>
+      <div className="data-test">
+        <h5>See test data from api url:</h5>
+        <div className="insert-data">
+          <input
+            type="number"
+            value={id}
+            onChange={idData}
+            min={1}
+            max={100}
+            placeholder="Unesi id"
+          />
+          <button onClick={getData}>Podaci</button>
+        </div>
         <p>{podatak.body}</p>
         <p>{podatak.id}</p>
         <p>{podatak.title}</p>

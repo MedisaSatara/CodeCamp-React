@@ -2,25 +2,60 @@
 
 .home-page{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
     min-height: 100vh;
     text-align: center;
     flex-direction: column;
     justify-self: center;
     .welcomeDiv{
-        width: 200px;
-        height: 200px;
+       height: 500px;
+       background-color: red;
+       background-repeat: no-repeat;
+       background-size: cover;
         h1{
             height: 50px;
+            color: white;
+        }
+    }
+    .nav-bar{
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+        box-shadow: 2px 2px gray;
+        height: 40px;
+        button{
+            width: 100px;
+            height: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: gray;
+        }
+
+    }
+    .data-test{
+        .insert-data{
+            display: flex;
+            justify-content: space-between;
+        
+        input{
+            width: 90%;
+            height: 30px;
         }
         button{
-            background-color: blue;
-            color: white;
-            width: 100px;
-            height: 30px;
+            width: 8%;
+            height: 32px;
             border: none;
-            box-shadow: 2px 2px grey;
+            box-shadow: 2px grey;
+            cursor: pointer;
         }
+        button:hover{
+            background-color: gray;
+        }
+    }
+
     }
 }
 

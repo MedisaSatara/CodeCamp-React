@@ -30,3 +30,12 @@ stvara se pomocu createContext()
 npr export const TemaContext=createContext("light") 
 npr stavi se na pocetku i citava stranica ce biti light
 
+.env
+tekstualna datoteka koja cuva varijable okruzenja koje se koriste u app, posevno razvojim i produkcijskim okruzenjima.
+
+Format .env datoteke
+
+REACT_APP_API_KEY=your-api-key-here
+REACT_APP_DATABASE_URL=https://example-database-url.com
+
+
